@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Thing Viewer</title>
+	<style>
+        .horizontal {
+            display: flex;
+            flex-direction: row;
+			align-items: center;
+        }
+
+        thing-viewer {
+            display: block;
+        }
+	</style>
+</head>
+<body>
+<h1>Thing Monitor</h1>
+<div class="horizontal">
+	<thing-viewer></thing-viewer>
+	<thing-viewer thing-id="a"></thing-viewer>
+	<thing-viewer thing-id="b"></thing-viewer>
+	<thing-viewer thing-id="c"></thing-viewer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

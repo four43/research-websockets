@@ -1,0 +1,7 @@
+version: '3.7'
+services:
+    redis:
+        container_name: ws_redis
+        image: redis
+        ports:
+          - 6379:6379

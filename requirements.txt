@@ -1,0 +1,4 @@
+fastapi~=0.63.0
+aiofiles~=0.6.0
+uvicorn[standard]~=0.13.0
+broadcaster[redis]==0.2.0
