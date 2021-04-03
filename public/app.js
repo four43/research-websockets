@@ -1,4 +1,4 @@
-class MyComponent extends HTMLElement {
+class DoodadViewer extends HTMLElement {
 	messages = [];
 
 	initWs() {
@@ -18,8 +18,22 @@ class MyComponent extends HTMLElement {
 
 	render() {
 		const style = `<style>
+			h1 {
+				margin-top: 0;
+				color: #FFF;
+				font-family: sans-serif;
+			}
+			h1 a {
+				color: #FFF;
+			}
 			.container {
 				width: 400px;
+				background-color: #111;
+				border-radius: 10px;
+				border: 3px solid #000;
+				box-shadow: 0 0 10px 1px #000000;
+				margin: 10px;
+				padding: 20px;
 			}
 			.message-list {
 				height: 200px;
@@ -27,6 +41,7 @@ class MyComponent extends HTMLElement {
 				overflow-y: scroll;
 			}
 			ul.message-list {
+				color: #FFF;
 				list-style-type: none;
 				margin: 0;
 				padding: 0;
@@ -39,7 +54,7 @@ class MyComponent extends HTMLElement {
 		}
 
 		let content = `<div class="container">`
-		content += `<h1>Feed: <a href="//localhost:8000/thing/${this.thingId}" target="_blank">${thingIdDisplay}</a>`;
+		content += `<h1>Doodad: <a href="//localhost:8000/thing/${this.thingId}" target="_blank">${thingIdDisplay}</a>`;
 
 		if (this.thingId !== "" && this.messages[0]) {
 			latestThing = JSON.parse(this.messages[0].data);
@@ -56,6 +71,8 @@ class MyComponent extends HTMLElement {
 		this.innerHTML = `${style}\n${content}`;
 		if (this.thingId !== "" && this.messages[0]) {
 			this.querySelector('h1 span').style.color = latestThing.color;
+			this.querySelector('.container').style.boxShadow = `0 0 10px 1px ${latestThing.color}`
+			this.querySelector('.container').style.borderColor = `${latestThing.color}`
 		}
 	}
 
@@ -70,4 +87,4 @@ class MyComponent extends HTMLElement {
 	}
 }
 
-customElements.define('thing-viewer', MyComponent);
+customElements.define('doodad-viewer', DoodadViewer);

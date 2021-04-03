@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Thing Viewer</title>
+	<title>Doodad Factory</title>
 	<style>
+        html {
+            background-color: #202020;
+        }
+
         .horizontal {
             display: flex;
             flex-direction: row;
-			align-items: center;
+            align-items: center;
         }
 
         thing-viewer {
@@ -15,12 +19,12 @@
 	</style>
 </head>
 <body>
-<h1>Thing Monitor</h1>
+<h1>Doodad Factory</h1>
 <div class="horizontal">
-	<thing-viewer></thing-viewer>
-	<thing-viewer thing-id="a"></thing-viewer>
-	<thing-viewer thing-id="b"></thing-viewer>
-	<thing-viewer thing-id="c"></thing-viewer>
+	<doodad-viewer></doodad-viewer>
+	<doodad-viewer thing-id="a"></doodad-viewer>
+	<doodad-viewer thing-id="b"></doodad-viewer>
+	<doodad-viewer thing-id="c"></doodad-viewer>
 </div>
 <script src="app.js"></script>
 </body>

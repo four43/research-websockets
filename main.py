@@ -104,7 +104,7 @@ async def shutdown_event():
         demo_publisher_proc.terminate()
 
 
-@app.get("/things/")
+@app.get("/thing/")
 async def get():
     redis_conn = broadcast._backend._pub_conn
 
