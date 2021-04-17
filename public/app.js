@@ -58,7 +58,7 @@ class DoodadViewer extends HTMLElement {
 
 		if (this.thingId !== "" && this.messages[0]) {
 			latestThing = JSON.parse(this.messages[0].data);
-			content += ` <span>(${latestThing.thing})</span>`;
+			content += ` <span>(${latestThing.type})</span>`;
 		}
 		content += `</h1>`;
 
